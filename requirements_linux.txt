@@ -12,7 +12,7 @@ azure-ai-formrecognizer==3.3.3
 azure-ai-vision-imageanalysis
 azure-cognitiveservices-vision-computervision==0.9.0
 azure-common==1.1.28
-azure-core==1.29.6
+azure-core==1.30.0
 backoff==2.2.1
 bcrypt==4.0.1
 beautifulsoup4==4.12.2
@@ -252,7 +252,7 @@ thinc==8.1.12
 threadpoolctl==3.2.0
 tiktoken==0.4.0
 timm==0.4.12
-tokenizers==0.19.1
+tokenizers #==0.19.1
 tqdm==4.66.4
 transformers==4.45.2
 typer==0.9.0

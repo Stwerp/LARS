@@ -63,7 +63,10 @@ import re
 from logging.handlers import RotatingFileHandler
 from nltk.corpus import stopwords
 
-
+# did pip install pysqulite3-binary_data
+__import__('pysqlite3')
+#import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 app = Flask(__name__)
 
@@ -2141,7 +2144,8 @@ def is_local_server_online(server_to_check):
         if response.status_code == 200:
             data = response.json()  # parse the JSON response to determine the server status
             if data['status'] == 'ok' and server_to_check == 'llama-cpp':
-                print(f"llama.cpp Server ready: {data['slots_idle']} idle slots, {data['slots_processing']} processing slots.")
+                #print(f"llama.cpp Server ready: {data['slots_idle']} idle slots, {data['slots_processing']} processing slots.")
+                print(f"llama.cpp Server ready. No slot information available.")
                 return {"server_available":True, "loading_model":False, "status_code":200}
             elif data['status'] == 'ok' and server_to_check == 'hf-waitress':
                 print(f"hf-waitress Server ready and online")
